@@ -25,7 +25,7 @@
       <a-light type="ambient" intensity="1.2"></a-light>
       <a-light type="directional" position="1 2 1"></a-light>
 
-      <!-- MODEL -->
+      <!-- MODEL (hidden initially) -->
       <a-entity
         id="food"
         gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
@@ -36,16 +36,14 @@
       </a-entity>
     </a-scene>
 
-    <!-- IMPORTANT: SCRIPT MUST BE AFTER a-scene -->
+    <!-- ✅ THIS IS THE KEY FIX -->
     <script>
-      const scene = document.querySelector('a-scene');
-      const model = document.querySelector('#food');
+      const sceneEl = document.querySelector('a-scene');
+      const modelEl = document.querySelector('#food');
 
-      scene.addEventListener('loaded', () => {
-        // iOS Safari camera permission delay
-        setTimeout(() => {
-          model.setAttribute('visible', 'true');
-        }, 1000);
+      sceneEl.addEventListener('arjs-video-loaded', () => {
+        // Camera is now fully ready on iOS
+        modelEl.setAttribute('visible', 'true');
       });
     </script>
   </body>
