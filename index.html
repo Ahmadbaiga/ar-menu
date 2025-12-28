@@ -40,23 +40,22 @@
   arjs="sourceType: webcam; debugUIEnabled: false;"
   vr-mode-ui="enabled: false"
 >
-  <!-- LOCKED CAMERA -->
-  <a-entity camera look-controls="enabled: false"></a-entity>
+  <!-- CAMERA -->
+  <a-entity camera position="0 1.6 0"></a-entity>
 
-  <!-- STRONG LIGHT -->
-  <a-light type="ambient" intensity="2"></a-light>
-  <a-light type="directional" position="0 2 1"></a-light>
+  <!-- LIGHTING -->
+  <a-light type="ambient" intensity="1.2"></a-light>
+  <a-light type="directional" position="1 2 1"></a-light>
 
-  <!-- BURGER: FORCE IN FRONT -->
+  <!-- MODEL -->
   <a-entity
     id="food"
     gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
-    position="0 0 -0.3"
-    scale="1 1 1"
-    rotation="0 0 0">
+    position="0 0 -1.5"
+    scale="0.2 0.2 0.2"
+    rotation="0 180 0">
   </a-entity>
 </a-scene>
-
 
 
 
