@@ -1,0 +1,11 @@
+Model Information:
+* title:	KFC Burger
+* source:	https://sketchfab.com/3d-models/kfc-burger-f88abe5f8113424dbdf07878a56aeecc
+* author:	vorobevdesign (https://sketchfab.com/vorobevdesign)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "KFC Burger" (https://sketchfab.com/3d-models/kfc-burger-f88abe5f8113424dbdf07878a56aeecc) by vorobevdesign (https://sketchfab.com/vorobevdesign) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
