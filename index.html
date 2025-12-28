@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-detector@4.0.5/dist/aframe-gesture-detector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-handler@1.2.0/dist/aframe-gesture-handler.min.js"></script>
+
 
     <style>
       body { margin: 0; overflow: hidden; }
@@ -36,25 +38,23 @@
   embedded
   arjs="sourceType: webcam; debugUIEnabled: false;"
   vr-mode-ui="enabled: false"
+  gesture-detector
 >
-  <a-entity
-  gltf-model="./models/burger.glb"
-  position="0 0 -0.8"
-  scale="0.2 0.2 0.2"
-  rotation="0 180 0"
-  gesture-handler>
-</a-entity>
+  <a-entity camera></a-entity>
 
   <a-light type="ambient" intensity="1.2"></a-light>
   <a-light type="directional" position="1 2 1"></a-light>
 
   <a-entity
-    gltf-model="./models/scene.gltf"
-    position="0 0 -0.8"
-    scale="0.2 0.2 0.2"
-    rotation="0 180 0">
+    id="food"
+    gltf-model="./models/burger.glb"
+    position="0 -0.5 -1.2"
+    scale="0.05 0.05 0.05"
+    rotation="0 180 0"
+    gesture-handler>
   </a-entity>
 </a-scene>
+
 
 
     <script>
