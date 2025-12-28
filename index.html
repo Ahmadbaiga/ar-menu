@@ -11,42 +11,42 @@
       body { margin: 0; overflow: hidden; }
     </style>
   </head>
-<script>
-  const scene = document.querySelector('a-scene');
-  const model = document.querySelector('#food');
-
-  scene.addEventListener('loaded', () => {
-    // Wait a bit to ensure camera permission is fully granted
-    setTimeout(() => {
-      model.setAttribute('visible', 'true');
-    }, 1000);
-  });
-</script>
 
   <body>
-  <a-scene
-  embedded
-  arjs="sourceType: webcam; debugUIEnabled: false;"
-  vr-mode-ui="enabled: false">
-  <!-- CAMERA -->
-  <a-entity camera position="0 1.6 0"></a-entity>
+    <a-scene
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      vr-mode-ui="enabled: false"
+    >
+      <!-- CAMERA -->
+      <a-entity camera position="0 1.6 0"></a-entity>
 
-  <!-- LIGHT -->
-  <a-light type="ambient" intensity="1.2"></a-light>
-  <a-light type="directional" position="1 2 1"></a-light>
+      <!-- LIGHT -->
+      <a-light type="ambient" intensity="1.2"></a-light>
+      <a-light type="directional" position="1 2 1"></a-light>
 
-  <!-- MODEL (IPHONE SAFE DISTANCE) -->
-  <a-entity
-  id="food"
-  gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
-  position="0 0 -2.2"
-  scale="0.15 0.15 0.15"
-  rotation="0 180 0"
-  visible="false">
-</a-entity>
-</a-scene>
-
-
+      <!-- MODEL -->
+      <a-entity
+        id="food"
+        gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
+        position="0 0 -2.2"
+        scale="0.15 0.15 0.15"
+        rotation="0 180 0"
+        visible="false">
+      </a-entity>
     </a-scene>
+
+    <!-- IMPORTANT: SCRIPT MUST BE AFTER a-scene -->
+    <script>
+      const scene = document.querySelector('a-scene');
+      const model = document.querySelector('#food');
+
+      scene.addEventListener('loaded', () => {
+        // iOS Safari camera permission delay
+        setTimeout(() => {
+          model.setAttribute('visible', 'true');
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
