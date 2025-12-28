@@ -9,8 +9,9 @@
     <!-- AR.js -->
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-detector@4.0.5/dist/aframe-gesture-detector.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-handler@1.2.0/dist/aframe-gesture-handler.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aframe-gesture-detector@4.0.5/dist/aframe-gesture-detector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aframe-gesture-handler@1.2.0/dist/aframe-gesture-handler.min.js"></script>
+
 
 
     <style>
@@ -40,19 +41,20 @@
   vr-mode-ui="enabled: false"
   gesture-detector
 >
-  <a-entity camera></a-entity>
+  <a-entity camera position="0 1.6 0"></a-entity>
 
   <a-light type="ambient" intensity="1.2"></a-light>
   <a-light type="directional" position="1 2 1"></a-light>
 
   <a-entity
-    id="food"
-    gltf-model="./models/burger-fixed.glb"
-    position="0 -0.5 -1.2"
-    scale="0.05 0.05 0.05"
-    rotation="0 180 0"
-    gesture-handler>
-  </a-entity>
+  id="food"
+  gltf-model="./models/burger-fixed.glb"
+  position="0 0 -1"
+  scale="0.25 0.25 0.25"
+  rotation="0 180 0"
+  gesture-handler="minScale: 0.15; maxScale: 0.5">
+</a-entity>
+
 </a-scene>
 
 
