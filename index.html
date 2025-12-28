@@ -14,21 +14,26 @@
 
   <body>
     <a-scene
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
-    >
-      <!-- CAMERA -->
-      <a-entity camera></a-entity>
+  embedded
+  arjs="sourceType: webcam; debugUIEnabled: false;"
+  vr-mode-ui="enabled: false"
+>
+  <!-- CAMERA -->
+  <a-entity camera position="0 1.6 0"></a-entity>
 
-      <!-- VERY BRIGHT LIGHT -->
-      <a-light type="ambient" intensity="2"></a-light>
+  <!-- LIGHT -->
+  <a-light type="ambient" intensity="1.2"></a-light>
+  <a-light type="directional" position="1 2 1"></a-light>
 
-      <!-- LARGE, CLOSE DUCK -->
-      <a-entity
-        gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
-        position="0 0 -0.5"
-        scale="1 1 1">
-      </a-entity>
+  <!-- MODEL (IPHONE SAFE DISTANCE) -->
+  <a-entity
+    gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
+    position="0 0 -2.2"
+    scale="0.15 0.15 0.15"
+    rotation="0 180 0">
+  </a-entity>
+</a-scene>
+
 
     </a-scene>
   </body>
